@@ -1,0 +1,57 @@
+version: "3.9"
+services:
+  web:
+    build: .
+    volumes:
+      - .:/rails-template
+    image: rails-template:latest
+    command: bundle exec rails s -u puma -p 3000 -b '0.0.0.0'
+    env_file:
+      - '.env.dev'
+    ports:
+      - "3000:3000"
+    depends_on:
+      - mailer
+      # - redis
+      - db
+    tty: true
+    stdin_open: true
+  # redis:
+  #   image: 'redis:5-alpine'
+  #   command: redis-server
+  # sidekiq:
+  #   build: .
+  #   command: bundle exec sidekiq -C ./config/sidekiq.yml
+  #   env_file:
+  #     - '.env'
+  #   volumes:
+  #     - /var/app/current/log/sidekiq/:/rails-template/log
+  #   depends_on:
+  #     - 'redis'
+  db:
+    image: postgres:15.1
+    ports:
+      - "5432"
+    environment:
+      POSTGRES_HOST_AUTH_METHOD: trust
+  mailer:
+    image: schickling/mailcatcher
+    ports:
+      - "1081:1080"
+      - "1026:1025"
+  test:
+    build:
+      context: .
+      cache_from:
+        - rails-template:latest
+    image: rails-template:latest
+    volumes:
+      - .:/rails-template
+    command: bundle exec rspec
+    env_file:
+      - '.env.test'
+    ports:
+      - "3000"
+    depends_on:
+      - db
+    profiles: ["test"]
