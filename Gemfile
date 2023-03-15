@@ -19,6 +19,10 @@ gem "tzinfo-data", platforms: %i[mingw mswin x64_mingw jruby]
 # Authentication
 gem 'devise', '~> 4.9'
 
+# rails admin
+gem 'rails_admin', '~> 3.1', '>= 3.1.1'
+gem "sassc-rails"
+
 # for HTTP requests
 gem 'faraday', '~> 2.7', '>= 2.7.4'
 
