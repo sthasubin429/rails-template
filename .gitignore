@@ -12,7 +12,6 @@
 /tmp/*
 !/log/.keep
 !/tmp/.keep
-.byebug_history
 
 # Ignore pidfiles, but keep the directory.
 /tmp/pids/*
@@ -34,9 +33,16 @@
 # Ignore test coverage report files
 /coverage
 
-.env*.local
-.env
+# Ignore Buyebug history
+.byebug_history
+
+# Vs code
+.vscode
+
+## Environment normalization:
+/.bundle
+/vendor/bundle
+
 .env.dev
 .env.test
-
-.vscode/*
+.env

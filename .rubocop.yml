@@ -1,0 +1,68 @@
+AllCops:
+  TargetRubyVersion: 3.1.2
+  NewCops: enable
+  Exclude:
+    - "bin/**/*"
+    - "db/schema.rb"
+
+Layout/SpaceInsideHashLiteralBraces:
+  EnforcedStyle: no_space
+
+Lint/AmbiguousBlockAssociation:
+  Exclude: ["spec/**/*"] # Rspec syntax is sweetest with a side of "ambiguous block association"
+
+Metrics/AbcSize:
+  Max: 18
+
+Metrics/BlockLength:
+  AllowedMethods: [
+    # RSpec/FactoryBot DSL
+    "describe", "context", "it", "let", "let!", "factory", "define", "shared_examples",
+    # RailsAdmin DSL
+    "rails_admin",
+    # Rake DSL
+    "namespace", "task"
+  ]
+  CountAsOne: ['array', 'hash']
+
+Metrics/ClassLength:
+  Max: 120
+  CountAsOne: ['array', 'hash']
+
+Layout/LineLength:
+  Max: 120
+
+Metrics/MethodLength:
+  Max: 14
+  CountAsOne: ['array', 'hash']
+
+Naming/MemoizedInstanceVariableName:
+  EnforcedStyleForLeadingUnderscores: required
+
+Naming/VariableNumber:
+  Enabled: false
+
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+Style/NumericPredicate:
+  Enabled: false
+
+Style/DocumentationMethod:
+  Enabled: true
+  RequireForNonPublicMethods: true
+  Exclude: ['spec/**/*']
+
+Style/StringLiterals:
+  EnforcedStyle: double_quotes
+  Exclude:
+    - 'Gemfile'
+
+Style/SymbolArray:
+  MinSize: 3
+
+Style/WordArray:
+  MinSize: 3
+
+Style/HashSyntax:
+  EnforcedShorthandSyntax: either
