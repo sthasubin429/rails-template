@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# Application Controller
 class ApplicationController < ActionController::Base
   # redirect to the rails admin dashboard or root path
   def after_sign_in_path_for(resource)
