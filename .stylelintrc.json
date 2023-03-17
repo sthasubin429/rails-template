@@ -1,8 +1,10 @@
 {
   "extends": ["stylelint-config-recommended", "stylelint-config-standard"],
   "plugins": ["stylelint-order", "stylelint-scss"],
+  "customSyntax": "postcss-scss",
   "rules": {
     "order/properties-alphabetical-order": true,
+    "string-quotes": "single",
 
     "annotation-no-unknown": null,
     "at-rule-no-unknown": null,

@@ -1,0 +1,14 @@
+// Variable
+@import 'globals/fonts';
+@import 'globals/variables';
+@import 'globals/color';
+
+// Libraries
+// @import "bootstrap";
+
+// Globals
+@import 'globals/mixins';
+@import 'globals/globals';
+
+// Components
+@import 'shared/*';
