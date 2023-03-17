@@ -11,20 +11,20 @@ plugins:
     enabled: true
   bundler-audit:
     enabled: true
-  # add stylelint codeclimate
-  # stylelint:
-  #   enabled: true
-  #   channel: "stylelint-14-15-0"
-  #   exclude_patterns:
-  #   - "**/*.html"
-  #   - "**/*.js"
-  #   config:
-  #     config: .stylelintrc.json
+  stylelint:
+    enabled: true
+    channel: "stylelint-14-15-0"
+    exclude_patterns:
+      - "**/*.html"
+      - "**/*.js"
+    config:
+      config: .stylelintrc.json
 exclude_patterns:
-- "config/"
-- "db/"
-- "dist/"
-- "features/"
-- "spec/"
-- "test/"
-- "Gemfile.lock"
+  - "config/"
+  - "db/"
+  - "dist/"
+  - "features/"
+  - "spec/"
+  - "test/"
+  - "Gemfile.lock"
+  - "coverage/"
