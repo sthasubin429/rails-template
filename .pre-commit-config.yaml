@@ -28,4 +28,5 @@ repos:
             "stylelint-config-standard@20.0.0",
             "stylelint-order@4.1.0",
             "stylelint-scss@3.18.0",
+            "postcss-scss@4.0.6"
           ]
