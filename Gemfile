@@ -23,6 +23,10 @@ gem 'devise', '~> 4.9'
 gem 'rails_admin', '~> 3.1', '>= 3.1.1'
 gem "sassc-rails"
 
+# Background jobs
+gem "sidekiq", "~> 7.0"
+gem "sidekiq-scheduler", "~> 5.0"
+
 # for HTTP requests
 gem 'faraday', '~> 2.7', '>= 2.7.4'
 
@@ -52,3 +56,4 @@ group :test do
   gem "timecop", "~> 0.9.5"
   gem "webmock", "~> 3.18", ">= 3.18.1"
 end
+

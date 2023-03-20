@@ -18,5 +18,10 @@ module RailsTemplate
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+    config.assets.configure do |env|
+      env.export_concurrent = false
+    end
+
+    config.active_job.queue_adapter = :sidekiq
   end
 end

@@ -1,0 +1,8 @@
+#
+# To schedule jobs Run - bundle exec sidekiq -C ./config/sidekiq.yml
+#
+# Example to queue a job
+test_job:
+  cron: '0 0 * * 0'
+  class: TestJob # Class name of job
+  description: "This is a test job that runs every week."
