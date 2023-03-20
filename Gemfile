@@ -26,6 +26,9 @@ gem "sassc-rails"
 # for HTTP requests
 gem 'faraday', '~> 2.7', '>= 2.7.4'
 
+# Pagination
+gem 'kaminari', '~> 1.2', '>= 1.2.2'
+
 group :development, :test do
   gem "byebug"
   gem "debug", platforms: %i[mri mingw x64_mingw]
