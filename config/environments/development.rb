@@ -29,6 +29,10 @@ Rails.application.configure do
   config.action_mailer.perform_deliveries = true
   config.action_mailer.perform_caching = false
 
+  # postmark
+  # config.action_mailer.delivery_method = :postmark
+  # config.action_mailer.postmark_settings = {api_token: ENV.fetch("POSTMARK_SECRET_TOKEN", nil)}
+
   # Enable/disable caching. By default caching is disabled.
   # Run rails dev:cache to toggle caching.
   if Rails.root.join("tmp/caching-dev.txt").exist?
@@ -85,4 +89,7 @@ Rails.application.configure do
     g.test_framework :rspec
     g.fixture_replacement :factory_bot, {dir: "spec/factories"}
   end
+
+  config.assets.compile = true
+  config.assets.debug = false
 end
