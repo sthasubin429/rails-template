@@ -56,4 +56,3 @@ group :test do
   gem "timecop", "~> 0.9.5"
   gem "webmock", "~> 3.18", ">= 3.18.1"
 end
-
