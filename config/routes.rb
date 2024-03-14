@@ -14,7 +14,7 @@ Rails.application.routes.draw do
 
   authenticated :user do
     root "home#index"
-    resources :posts, only: [:index]
+    resources :posts, only: %i[index new create]
   end
 
   authenticated :admin do
