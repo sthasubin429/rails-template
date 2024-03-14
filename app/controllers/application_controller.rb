@@ -11,6 +11,6 @@ class ApplicationController < ActionController::Base
   # redirect to admin sign up page or client sign up page
   def after_sign_out_path_for(resource)
     # Only symbol of model is sent while performing sign out action through devise
-    resource == :admin ? new_admin_session_path : new_client_session_path
+    resource == :admin ? new_admin_session_path : new_user_session_path
   end
 end

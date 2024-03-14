@@ -1,4 +1,4 @@
-version: "3.9"
+version: '3.9'
 services:
   web:
     build: .
@@ -9,7 +9,7 @@ services:
     env_file:
       - '.env.dev'
     ports:
-      - "3000:3000"
+      - '3000:3000'
     depends_on:
       - mailer
       - redis
@@ -31,14 +31,14 @@ services:
   db:
     image: postgres:15.1
     ports:
-      - "5432"
+      - '5433:5432'
     environment:
       POSTGRES_HOST_AUTH_METHOD: trust
   mailer:
     image: schickling/mailcatcher
     ports:
-      - "1081:1080"
-      - "1026:1025"
+      - '1081:1080'
+      - '1026:1025'
   test:
     build:
       context: .
@@ -51,7 +51,7 @@ services:
     env_file:
       - '.env.test'
     ports:
-      - "3000"
+      - '3000'
     depends_on:
       - db
-    profiles: ["test"]
+    profiles: ['test']
