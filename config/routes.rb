@@ -11,8 +11,10 @@ Rails.application.routes.draw do
 
   get "/", to: "home#landing_page", as: :landing_page
   get "home", to: "home#index"
+
   authenticated :user do
     root "home#index"
+    resources :posts, only: [:index]
   end
 
   authenticated :admin do
