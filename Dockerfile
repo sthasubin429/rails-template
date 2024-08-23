@@ -16,3 +16,14 @@ COPY . /rails-template
 
 # precompile assets
 RUN bundle exec rake assets:precompile --trace
+
+# Script run when container first starts
+COPY entrypoint.sh entrypoint.sh
+RUN chmod +x entrypoint.sh
+ENTRYPOINT [ "/rails-template/entrypoint.sh" ]
+
+# Document that we're going to expose port 3000
+EXPOSE 3000
+
+# Use Bash as the default command
+CMD ["/usr/bin/bash"]
