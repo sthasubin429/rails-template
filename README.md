@@ -20,10 +20,10 @@
 - Pagination with kaminari
 
 ## Requirements
-- Ruby - v3.2.0
-- Ruby on Rails - v7.0.3
-- PostgreSQL - v15.1
-- sidekiq - 7.0
+- Ruby - v3.3.4
+- Ruby on Rails - v7.2
+- PostgreSQL - v16
+- sidekiq - 7.3
 - sidekiq-scheduler - 5.0
 
 ## Development Requirements
