@@ -33,6 +33,9 @@ gem 'faraday', '~> 2.10', '>= 2.10.1'
 # Pagination
 gem 'kaminari', '~> 1.2', '>= 1.2.2'
 
+# Tailwind
+gem "tailwindcss-rails", "~> 2.7"
+
 group :development, :test do
   gem "byebug"
   gem "debug", platforms: %i[mri mingw x64_mingw]
